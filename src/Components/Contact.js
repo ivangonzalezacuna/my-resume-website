@@ -3,6 +3,8 @@ import React, { Component } from "react";
 class Contact extends Component {
   render() {
     if (this.props.data) {
+      var contactdetails = this.props.data.contactdetails;
+      var contactaddress = this.props.data.contactaddress;
       var name = this.props.data.name;
       var street = this.props.data.address.street;
       var city = this.props.data.address.city;
@@ -18,7 +20,7 @@ class Contact extends Component {
           <div className="twelve columns main-col">
             <div className="row">
               <div className="six columns">
-                <h2>Contact Details</h2>
+                <h2>{contactdetails}</h2>
                 <p className="address">
                   <span class="contact-info">
                     <i class="icon-name"></i>
@@ -37,7 +39,7 @@ class Contact extends Component {
                 </p>
               </div>
               <div className="six columns">
-                <h2>Addres</h2>
+                <h2>{contactaddress}</h2>
                 <p className="address">
                   <span class="contact-info">
                     <i class="icon icon-home"></i>

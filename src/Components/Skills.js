@@ -2,7 +2,8 @@ import React, { Component } from "react";
 
 class Skills extends Component {
   render() {
-    if (this.props.data) {
+    if (this.props.data && this.props.title) {
+      var title = this.props.title.navskills;
       var skilltext = this.props.data.skilltext;
       var skills1 = this.props.data.skills1.map(function (skills1) {
         var className = "bar-expand " + skills1.name.toLowerCase();
@@ -29,7 +30,7 @@ class Skills extends Component {
         <div className="row skill">
           <div className="three columns header-col">
             <h1>
-              <span>Skills</span>
+              <span>{title}</span>
             </h1>
           </div>
         </div>

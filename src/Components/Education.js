@@ -2,8 +2,9 @@ import React, { Component } from "react";
 
 class Education extends Component {
   render() {
-    if (this.props.data) {
-      var education = this.props.data.education.map(function (education) {
+    if (this.props.data && this.props.title) {
+      var title = this.props.title.naveducation;
+      var education = this.props.data.map(function (education) {
         return (
           <div key={education.school}>
             <h3>{education.school}</h3>
@@ -22,7 +23,7 @@ class Education extends Component {
         <div className="row education">
           <div className="three columns header-col">
             <h1>
-              <span>Education</span>
+              <span>{title}</span>
             </h1>
           </div>
 

@@ -1,0 +1,133 @@
+{
+  "main": {
+    "navhome": "Inicio",
+    "navabout": "Sobre Mi",
+    "naveducation": "Estudios",
+    "navwork": "Trabajo",
+    "navskills": "Aptitudes",
+    "navcontact": "Contacto",
+    "contactdetails":"Datos de contacto",
+    "contactaddress":"Dirección",
+    "titleintro": "Soy",
+    "desc1": "Con residencia en",
+    "desc2": "trabajando actualmente como",
+    "desc3": "en",
+    "name": "Iván González",
+    "occupation": "I+D",
+    "company": "Universidad de Vigo",
+    "contactmessage": "Here is where you should write your message to readers to have them get in contact with you",
+    "email": "ivangonzalezacuna@gmail.com",
+    "phone": "+34 654 46 26 02",
+    "address": {
+      "street": "Casal nº52, Guláns",
+      "city": "Ponteareas",
+      "state": "España",
+      "zip": "36861"
+    },
+    "website": "https://ivangonzalez-resume.web.app/",
+    "social": [
+      {
+        "name": "linkedin",
+        "url": "https://www.linkedin.com/in/ivangonzalezacuna/",
+        "className": "fa fa-linkedin"
+      },
+      {
+        "name": "facebook",
+        "url": "https://www.facebook.com/ivan.gonzalezacuna/",
+        "className": "fa fa-facebook"
+      },
+      {
+        "name": "github",
+        "url": "https://github.com/ivangonzalezacuna",
+        "className": "fa fa-github"
+      },
+      {
+        "name": "skype",
+        "url": "https://join.skype.com/invite/cbwetKxu9kj9",
+        "className": "fa fa-skype"
+      }
+    ]
+  },
+  "about": {
+    "title": "Sobre mí",
+    "resumedownload": "https://drive.google.com/open?id=1vBRRVQ3HlfjKR98kpUMrY1EtojNJeVvi",
+    "download":"Descargar CV",
+    "image": "profilepic.png",
+    "bio": "Buen trabajador en equipo. Con muchas ganas de tener nuevas experiencias laborales, donde tenga la oportunidad de aprender más en el ámbito tecnológico, crecer personal y profesionalmente, y poder así aportar positivamente a la consecución de los objetivos"
+  },
+  "education": [
+    {
+      "school": "Universidad de Vigo",
+      "degree": "Grado en Ingeniería de Tecnologías de Telecomunicación",
+      "graduated": " Agosto 2016 - Junio 2020",
+      "description": "Habiendo cursado la especialidad de Telemática. Gracias a la cual pude aprender mucho no solo en programación, sino también en distintos protocolos de comunicación a través de Internet u otras redes"
+    },
+    {
+      "school": "Oulu University of Applied Sciences",
+      "degree": "Desarrollo Software",
+      "graduated": "Agosto 2019 - Diciembre 2019",
+      "description": "Erasmus durante el primer cuatrimestre de mi último año. Donde pude aprender mucho sobre el MEAN Stack (Node.js, Angular8, MongoDB, ...), en el desarrollo de apps en Android e iOS y mejorar mis aptitudes en Java, CSS o Javascript"
+    }
+  ],
+  "work": [
+    {
+      "company": "Universidad de Vigo",
+      "title": "Investigación y Desarrollo",
+      "years": "Febrero 2020 - Actualidad",
+      "description": "Investigación y desarrollo de diferentes tecnologías para demostrar si son implementables en un producto final"
+    },
+    {
+      "company": "Muutech Monitoring Solutions SL",
+      "title": "Prácticas en empresa",
+      "years": "Junio 2019 - Julio 2019",
+      "description": "Investigación y desarrollo de un detector de anomalías en procesos industriales empleando Inteligencia Artificial y Machine Learning"
+    }
+  ],
+  "skills": {
+    "skilltext": "Conocimiento en el uso de herramientas para organización y comunicación de equipos como Trello, Slack, Confluence o Jira. Además, tengo buenos conocimientos usando Microsoft Office",
+    "skills1": [
+      {
+        "name": "Java",
+        "level": "75%"
+      },
+      {
+        "name": "C",
+        "level": "50%"
+      },
+      {
+        "name": "Python",
+        "level": "50%"
+      },
+      {
+        "name": "Go",
+        "level": "50%"
+      },
+      {
+        "name": "Des. Web (MEAN Stack)",
+        "level": "40%"
+      }
+    ],
+    "skills2": [
+      {
+        "name": "Linux",
+        "level": "65%"
+      },
+      {
+        "name": "Git",
+        "level": "65%"
+      },
+      {
+        "name": "Docker",
+        "level": "40%"
+      },
+      {
+        "name": "BBDD (MySQL, PostgreSQL, ...)",
+        "level": "65%"
+      },
+      {
+        "name": "Des. Apps (Android & iOS)",
+        "level": "65%"
+      }
+    ]
+  }
+}

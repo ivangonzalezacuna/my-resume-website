@@ -3,7 +3,9 @@ import React, { Component } from "react";
 class About extends Component {
   render() {
     if (this.props.data) {
+      var title = this.props.data.title;
       var profilepic = "images/" + this.props.data.image;
+      var download = this.props.data.download;
       var bio = this.props.data.bio;
       var resumeDownload = this.props.data.resumedownload;
     }
@@ -19,14 +21,14 @@ class About extends Component {
             />
           </div>
           <div className="nine columns main-col">
-            <h2>About Me</h2>
+            <h2>{title}</h2>
 
             <p>{bio}</p>
             <div className="row">
               <div className="columns download">
                 <p>
                   <a href={resumeDownload} className="button">
-                    <i className="fa fa-download"></i>Download CV
+                    <i className="fa fa-download"></i>{download}
                   </a>
                 </p>
               </div>

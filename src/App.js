@@ -1,63 +1,94 @@
-import React, { Component } from 'react';
-import ReactGA from 'react-ga';
-import $ from 'jquery';
-import './App.css';
-import Header from './Components/Header';
-import Footer from './Components/Footer';
-import About from './Components/About';
-import Education from './Components/Education';
-import Work from './Components/Work';
-import Skills from './Components/Skills';
-import Contact from './Components/Contact';
-import StaticImage from "./Components/StaticImage"
+import React, { Component } from "react";
+import ReactGA from "react-ga";
+import $ from "jquery";
+import "./App.css";
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
+import About from "./Components/About";
+import Education from "./Components/Education";
+import Work from "./Components/Work";
+import Skills from "./Components/Skills";
+import Contact from "./Components/Contact";
+import StaticImage from "./Components/StaticImage";
 
 class App extends Component {
-
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      foo: 'bar',
-      resumeData: {}
+      foo: "bar",
+      resumeData: {},
+      classEN: "",
+      classES: "",
     };
+    this.getResumeDataEN = this.getResumeDataEN.bind(this);
+    this.getResumeDataES = this.getResumeDataES.bind(this);
 
-    ReactGA.initialize('UA-110570651-1');
+    ReactGA.initialize("UA-110570651-1");
     ReactGA.pageview(window.location.pathname);
-
   }
 
-  getResumeData(){
+  getResumeDataEN() {
     $.ajax({
-      url:'/resumeData.json',
-      dataType:'json',
+      url: "/en.json",
+      dataType: "json",
       cache: false,
-      success: function(data){
-        this.setState({resumeData: data});
+      success: function (data) {
+        this.setState({ resumeData: data, classEN: "selected", classES: "" });
       }.bind(this),
-      error: function(xhr, status, err){
+      error: function (xhr, status, err) {
         console.log(err);
         alert(err);
-      }
+      },
     });
   }
 
-  componentDidMount(){
-    this.getResumeData();
+  getResumeDataES() {
+    $.ajax({
+      url: "/es.json",
+      dataType: "json",
+      cache: false,
+      success: function (data) {
+        this.setState({ resumeData: data, classEN: "", classES: "selected"  });
+      }.bind(this),
+      error: function (xhr, status, err) {
+        console.log(err);
+        alert(err);
+      },
+    });
+  }
+
+  componentDidMount() {
+    this.getResumeDataEN("en");
   }
 
   render() {
     return (
       <div className="App">
-        <Header data={this.state.resumeData.main}/>
-        <About data={this.state.resumeData.main}/>
-        <Education data={this.state.resumeData.resume}/>
-        <Work data={this.state.resumeData.resume}/>
-        <Skills data={this.state.resumeData.resume}/>
-        <StaticImage data={this.state.resumeData.main}/>
-        <Contact data={this.state.resumeData.main}/>
-        <Footer data={this.state.resumeData.main}/>
+        <Header
+          classLangEN={this.state.classEN}
+          classLangES={this.state.classES}
+          en={this.getResumeDataEN}
+          es={this.getResumeDataES}
+          data={this.state.resumeData.main}
+        />
+        <About data={this.state.resumeData.about} />
+        <Education
+          title={this.state.resumeData.main}
+          data={this.state.resumeData.education}
+        />
+        <Work
+          title={this.state.resumeData.main}
+          data={this.state.resumeData.work}
+        />
+        <Skills
+          title={this.state.resumeData.main}
+          data={this.state.resumeData.skills}
+        />
+        <StaticImage data={this.state.resumeData.main} />
+        <Contact data={this.state.resumeData.main} />
+        <Footer data={this.state.resumeData.main} />
       </div>
     );
   }
 }
-
 export default App;

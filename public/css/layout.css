@@ -175,6 +175,7 @@ ul#nav li a {
   /* 8px padding top + 8px padding bottom + 32px line-height = 48px */
   display: inline-block;
   padding: 8px 13px;
+  margin-bottom: 0px;
   line-height: 32px;
   text-decoration: none;
   text-align: left;
@@ -191,6 +192,29 @@ ul#nav li a:active {
   background-color: transparent !important;
 }
 ul#nav li.current a {
+  color: #1a7ed3;
+}
+
+/* Lang selectors */
+ul#nav li.lang {
+  position: fixed;
+  right: 30px;
+}
+
+ul#nav li.lang a#selected span {
+  border-bottom: 2px solid #1a7ed3;
+}
+
+ul#nav a.btn {
+  display: inline-block;
+  padding: 8px 5px;
+  text-decoration: none;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+ul#nav a.btn:hover {
   color: #1a7ed3;
 }
 

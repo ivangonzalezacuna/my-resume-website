@@ -2,8 +2,9 @@ import React, { Component } from "react";
 
 class Work extends Component {
   render() {
-    if (this.props.data) {
-      var work = this.props.data.work.map(function (work) {
+    if (this.props.data && this.props.title) {
+      var title = this.props.title.navwork;
+      var work = this.props.data.map(function (work) {
         return (
           <div key={work.company}>
             <h3>{work.company}</h3>
@@ -22,7 +23,7 @@ class Work extends Component {
         <div className="row work">
           <div className="three columns header-col">
             <h1>
-              <span>Work</span>
+              <span>{title}</span>
             </h1>
           </div>
           <div className="nine columns main-col">{work}</div>

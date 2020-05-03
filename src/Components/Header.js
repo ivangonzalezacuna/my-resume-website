@@ -3,6 +3,16 @@ import React, { Component } from "react";
 class Header extends Component {
   render() {
     if (this.props.data) {
+      var navhome = this.props.data.navhome;
+      var navabout = this.props.data.navabout;
+      var naveducation = this.props.data.naveducation;
+      var navwork = this.props.data.navwork;
+      var navskills = this.props.data.navskills;
+      var navcontact = this.props.data.navcontact;
+      var titleintro = this.props.data.titleintro;
+      var desc1 = this.props.data.desc1;
+      var desc2 = this.props.data.desc2;
+      var desc3 = this.props.data.desc3;
       var name = this.props.data.name;
       var occupation = this.props.data.occupation;
       var company = this.props.data.company;
@@ -32,32 +42,50 @@ class Header extends Component {
           <ul id="nav" className="nav">
             <li className="current">
               <a className="smoothscroll" href="#home">
-                Home
+                {navhome}
               </a>
             </li>
             <li>
               <a className="smoothscroll" href="#about">
-                About
+                {navabout}
               </a>
             </li>
             <li>
               <a className="smoothscroll" href="#education">
-                Education
+                {naveducation}
               </a>
             </li>
             <li>
               <a className="smoothscroll" href="#work">
-                Work
+                {navwork}
               </a>
             </li>
             <li>
               <a className="smoothscroll" href="#skills">
-                Skills
+                {navskills}
               </a>
             </li>
             <li>
               <a className="smoothscroll" href="#contact">
-                Contact
+                {navcontact}
+              </a>
+            </li>
+            <li class="lang">
+              <a
+                type="button"
+                id={this.props.classLangEN}
+                class="btn"
+                onClick={this.props.en}
+              >
+                <span>EN</span>
+              </a>
+              <a
+                type="button"
+                id={this.props.classLangES}
+                class="btn"
+                onClick={this.props.es}
+              >
+                <span>ES</span>
               </a>
             </li>
           </ul>
@@ -65,10 +93,12 @@ class Header extends Component {
 
         <div className="row banner">
           <div className="banner-text">
-            <h1 className="responsive-headline">I'm {name}</h1>
+            <h1 className="responsive-headline">
+              {titleintro} {name}
+            </h1>
             <h3>
-              Based in {city} ({country}), currently working as <span>{occupation}</span> at{" "}
-              <span>{company}</span>.
+              {desc1} {city} ({country}), {desc2} <span>{occupation}</span>{" "}
+              {desc3} <span>{company}</span>
             </h3>
             <hr />
             <ul className="social">{networks}</ul>
@@ -86,3 +116,53 @@ class Header extends Component {
 }
 
 export default Header;
+/*
+<nav id="nav-wrap">
+          <a className="mobile-btn" href="#nav-wrap" title="Show navigation">
+            Show navigation
+          </a>
+          <a className="mobile-btn" href="#home" title="Hide navigation">
+            Hide navigation
+          </a>
+
+          <ul id="nav" className="nav">
+            <li className="current">
+              <a className="smoothscroll" href="#home">
+                {navhome}
+              </a>
+            </li>
+            <li>
+              <a className="smoothscroll" href="#about">
+                {navabout}
+              </a>
+            </li>
+            <li>
+              <a className="smoothscroll" href="#education">
+                {naveducation}
+              </a>
+            </li>
+            <li>
+              <a className="smoothscroll" href="#work">
+                {navwork}
+              </a>
+            </li>
+            <li>
+              <a className="smoothscroll" href="#skills">
+                {navskills}
+              </a>
+            </li>
+            <li>
+              <a className="smoothscroll" href="#contact">
+                {navcontact}
+              </a>
+            </li>
+            <li class="langsection">
+              <a type="button" class="btn" onClick={this.props.en}>
+                {langEN}
+              </a>
+              <a type="button" class="btn" onClick={this.props.es}>
+                {langES}
+              </a>
+            </li>
+          </ul>
+        </nav> */
