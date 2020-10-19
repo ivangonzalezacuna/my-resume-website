@@ -72,13 +72,13 @@ class App extends Component {
           data={this.state.resumeData.main}
         />
         <About data={this.state.resumeData.about} />
-        <Education
-          title={this.state.resumeData.main}
-          data={this.state.resumeData.education}
-        />
         <Work
           title={this.state.resumeData.main}
           data={this.state.resumeData.work}
+        />
+        <Education
+          title={this.state.resumeData.main}
+          data={this.state.resumeData.education}
         />
         <Skills
           title={this.state.resumeData.main}
