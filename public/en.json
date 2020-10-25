@@ -93,7 +93,7 @@
     "skills1": [
       {
         "name": "Java",
-        "level": "75%"
+        "level": "70%"
       },
       {
         "name": "Go",
@@ -101,7 +101,7 @@
       },
       {
         "name": "C",
-        "level": "50%"
+        "level": "45%"
       },
       {
         "name": "Python",
@@ -115,7 +115,7 @@
     "skills2": [
       {
         "name": "Linux",
-        "level": "65%"
+        "level": "60%"
       },
       {
         "name": "Git",
