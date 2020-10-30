@@ -71,20 +71,10 @@ class Header extends Component {
               </a>
             </li>
             <li class="lang">
-              <a
-                type="button"
-                id={this.props.classLangEN}
-                class="btn"
-                onClick={this.props.en}
-              >
+              <a type="button" id={this.props.classLangEN} class="btn" onClick={this.props.en}>
                 <span>EN</span>
               </a>
-              <a
-                type="button"
-                id={this.props.classLangES}
-                class="btn"
-                onClick={this.props.es}
-              >
+              <a type="button" id={this.props.classLangES} class="btn" onClick={this.props.es}>
                 <span>ES</span>
               </a>
             </li>
