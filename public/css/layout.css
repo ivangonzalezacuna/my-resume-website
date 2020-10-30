@@ -8,6 +8,10 @@
    f. Contact Section
    g. Footer
 
+## Colors:
+   BlueNormal: #1a7ed3
+   BlueDark: #335384
+
 ===================================================================== */
 
 /* ------------------------------------------------------------------ */
@@ -235,7 +239,7 @@ ul#nav a.btn:hover {
 }
 #about a:hover,
 #about a:focus {
-  color: #1a7ed3;
+  color: #335384;
 }
 
 #about h2 {
@@ -286,7 +290,7 @@ ul#nav a.btn:hover {
 
 .resume a,
 .resume a:visited {
-  color: #1a7ed3;
+  color: #335384;
 }
 .resume a:hover,
 .resume a:focus {
@@ -379,7 +383,7 @@ ul#nav a.btn:hover {
   top: 0;
   margin: 0;
   padding-right: 24px;
-  background: #1a7ed3;
+  background: #335384;
   display: inline-block;
   height: 42px;
   line-height: 42px;
@@ -618,7 +622,7 @@ footer .social-links {
   margin: 18px 0 30px 0;
   padding: 0;
   font-size: 30px;
-  color: #11abb0;
+  color: #1a7ed3;
 }
 footer .social-links li {
   display: inline-block;
