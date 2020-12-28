@@ -8,10 +8,6 @@
    f. Contact Section
    g. Footer
 
-## Colors:
-   BlueNormal: #1a7ed3
-   BlueDark: #335384
-
 ===================================================================== */
 
 /* ------------------------------------------------------------------ */
@@ -20,6 +16,7 @@
 
 body {
   background: #0f0f0f;
+  cursor: default;
 }
 
 /* ------------------------------------------------------------------ */
@@ -45,6 +42,7 @@ header:before {
   vertical-align: middle;
   height: 100%;
 }
+
 header .banner {
   display: inline-block;
   vertical-align: middle;
@@ -60,24 +58,32 @@ header .banner-text {
   border-radius: 15px;
   padding: 30px;
 }
+
 header .banner-text h1 {
   font: 90px/1.1em "opensans-bold", sans-serif;
   color: #ffffff;
   letter-spacing: -2px;
   margin: 0 auto 18px auto;
   text-shadow: 0px 1px 3px #000000cc;
+  opacity: 0;
+  animation: showText 0.5s linear forwards;
 }
+
 header .banner-text h3 {
   font: 18px/1.9em "librebaskerville-regular", serif;
   color: #bdbdbd;
   margin: 0 auto;
   width: 70%;
   text-shadow: 0px 1px 2px #00000080;
+  opacity: 0;
+  animation: showText 1s 0.5s linear forwards;
 }
+
 header .banner-text h3 span,
 header .banner-text h3 a {
   color: #ffffff;
 }
+
 header .banner-text hr {
   width: 60%;
   margin: 18px auto 24px auto;
@@ -91,15 +97,20 @@ header .social {
   padding: 0;
   font-size: 30px;
   text-shadow: 0px 1px 2px #000000cc;
+  opacity: 0;
+  animation: showText 0.5s 1s linear forwards;
 }
+
 header .social li {
   display: inline-block;
   margin: 0 15px;
   padding: 0;
 }
+
 header .social li a {
   color: #ffffff;
 }
+
 header .social li a:hover {
   color: #1a7ed3;
 }
@@ -124,6 +135,7 @@ header .scrolldown a {
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
+
 header .scrolldown a:hover {
   color: #1a7ed3;
 }
@@ -151,6 +163,7 @@ header .scrolldown a:hover {
   left: 0;
   top: 0;
 }
+
 .opaque {
   background-color: #333333;
 }
@@ -167,6 +180,7 @@ ul#nav {
   /* center align the menu */
   text-align: center;
 }
+
 ul#nav li {
   position: relative;
   list-style: none;
@@ -195,7 +209,12 @@ ul#nav li a {
 ul#nav li a:active {
   background-color: transparent !important;
 }
+
 ul#nav li.current a {
+  color: #1a7ed3;
+}
+
+ul#nav li a:hover {
   color: #1a7ed3;
 }
 
@@ -203,10 +222,15 @@ ul#nav li.current a {
 ul#nav li.lang {
   position: fixed;
   right: 30px;
+  vertical-align: middle;
 }
 
 ul#nav li.lang a#selected span {
-  border-bottom: 2px solid #1a7ed3;
+  border-bottom: 3px solid #1a7ed3;
+}
+
+ul#nav li.lang a span img {
+  vertical-align: middle;
 }
 
 ul#nav a.btn {
@@ -234,12 +258,10 @@ ul#nav a.btn:hover {
 }
 
 #about a,
-#about a:visited {
+#about a:visited,
+#about a:link,
+#about a:active {
   color: #ffffff;
-}
-#about a:hover,
-#about a:focus {
-  color: #335384;
 }
 
 #about h2 {
@@ -247,31 +269,38 @@ ul#nav a.btn:hover {
   color: #ffffff;
   margin-bottom: 12px;
 }
+
 #about p {
   line-height: 30px;
   color: #a7a7a7;
 }
+
 #about .profile-pic {
   position: relative;
   width: 160px;
   height: 160px;
   border-radius: 100%;
 }
+
 #about .download {
   width: 58.33333%;
   padding-top: 6px;
 }
+
 #about .main-col {
   padding-right: 5%;
 }
+
 #about .download .button {
   margin-top: 6px;
   background: #444444;
 }
+
 #about .download .button:hover {
   background: #ffffff;
   color: #2b2b2b;
 }
+
 #about .download .button i {
   margin-right: 15px;
   font-size: 20px;
@@ -292,6 +321,7 @@ ul#nav a.btn:hover {
 .resume a:visited {
   color: #335384;
 }
+
 .resume a:hover,
 .resume a:focus {
   color: #313131;
@@ -302,10 +332,12 @@ ul#nav a.btn:hover {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+
 .resume h1 span {
   border-bottom: 3px solid #1a7ed3;
-  padding-bottom: 6px;
+  padding-bottom: 3px;
 }
+
 .resume h3 {
   font: 25px/30px "opensans-bold", sans-serif;
 }
@@ -313,6 +345,7 @@ ul#nav a.btn:hover {
 .resume .header-col {
   padding-top: 9px;
 }
+
 .resume .main-col {
   padding-right: 10%;
 }
@@ -323,159 +356,143 @@ ul#nav a.btn:hover {
   padding-bottom: 24px;
   border-bottom: 1px solid #e8e8e8;
 }
-.resume .info {
-  font: 16px/24px "open-sans", serif;
-  font-style: italic;
-  color: #6e7881;
-  margin-bottom: 18px;
-  margin-top: 9px;
+
+.resume .date,
+.resume .resume-sec-title {
+  font: 14px/20px "opensans-bold", sans-serif;
+  margin-bottom: 7px;
+  margin-top: 20px;
+  color: #7a7c7c;
+  font-weight: bold;
 }
-.resume .info span {
+
+.resume .resume-sec-title {
+  font-style: italic;
+}
+
+.resume .date {
+  font-style: normal;
+}
+
+.resume .resume-sec-title span {
   margin-right: 5px;
   margin-left: 5px;
 }
-.resume .date {
-  font: 15px/24px "opensans-regular", sans-serif;
-  margin-top: 6px;
-}
-.resume .skilltext {
-  font: 15px "opensans-bold", sans-serif;
-  color: #313131;
-  font-weight: normal;
-  position: relative;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+
+.resume .description {
+  font: 15px;
+  font-style: normal;
 }
 
 /*----------------------------------------------*/
 /*	Skill Bars
 /*----------------------------------------------*/
 
-.bars {
-  width: 95%;
-  float: left;
+.skills-bar .bar {
+  margin: 20px 0;
   padding: 0;
   text-align: left;
 }
-.bars .skills {
-  margin-top: 36px;
-  list-style: none;
-}
-.bars li {
-  position: relative;
-  margin-bottom: 60px;
-  background: #c5c5c5;
-  height: 42px;
-  border-radius: 3px;
-}
-.bars li em {
-  font: 15px "opensans-bold", sans-serif;
+
+.bar em.name {
+  font: 14px "opensans-bold", sans-serif;
   color: #313131;
   text-transform: uppercase;
-  letter-spacing: 2px;
   font-weight: normal;
   position: relative;
-  top: -30px;
+  text-align: left;
 }
-.bar-expand {
-  position: absolute;
-  left: 0;
-  top: 0;
-  margin: 0;
-  padding-right: 24px;
+
+.bar em.subname {
+  font: 10px "opensans-bold", sans-serif;
+  color: #a9a9a9;
+  margin-left: 7px;
+  font-weight: normal;
+  position: relative;
+  text-align: left;
+}
+
+div.skill-info {
+  line-height: 20%;
+}
+
+.skilltext p {
+  font: 14px "opensans-bold", sans-serif;
+  margin-top: 20px;
+  color: #313131;
+  font-weight: normal;
+  position: relative;
+  text-align: left;
+  opacity: 0;
+  animation: showText 0.5s 1s linear forwards;
+}
+
+.skills-bar .bar:first-child {
+  margin-top: 0px;
+}
+
+.skills-bar .bar .skill-info {
+  margin-bottom: 5px;
+}
+
+.skills-bar .bar .skill-info em.name {
+  font-weight: 500;
+  opacity: 0;
+  animation: showText 0.5s 1s linear forwards;
+}
+
+.skills-bar .bar .skill-info em.subname {
+  font-weight: 500;
+  opacity: 0;
+  animation: showText 0.5s 1.5s linear forwards;
+}
+
+@keyframes showText {
+  100% {
+    opacity: 1;
+  }
+}
+
+.skills-bar .bar .progress-line {
+  position: relative;
+  height: 36px;
+  width: 100%;
+  background: #c5c5c5;
+  border-radius: 4px;
+  transform: scaleX(0);
+  transform-origin: left;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.10),
+                    0px 1px rgba(255, 255, 255, 0.8);
+  animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+
+.bar .progress-line span {
+  height: 100%;
   background: #335384;
-  display: inline-block;
-  height: 42px;
-  line-height: 42px;
-  border-radius: 3px 0 0 3px;
-}
-/*
-.git {
-  	-moz-animation: git 2s ease;
-  	-webkit-animation: git 2s ease;
-}
-.illustrator {
-  	-moz-animation: illustrator 2s ease;
-  	-webkit-animation: illustrator 2s ease;
-}
-.reactjs {
-  	-moz-animation: reactjs 2s ease;
-  	-webkit-animation: reactjs 2s ease;
-}
-.css {
-  	-moz-animation: css 2s ease;
-  	-webkit-animation: css 2s ease;
-}
-.html5 {
-  	-moz-animation: html5 2s ease;
-  	-webkit-animation: html5 2s ease;
-}
-.vuejs {
-  	-moz-animation: vuejs 2s ease;
-  	-webkit-animation: vuejs 2s ease;
-}
-.mongodb {
-  	-moz-animation: mongodb 2s ease;
-  	-webkit-animation: mongodb 2s ease;
+  border-radius: 4px;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
 }
 
-@-moz-keyframes git {
-  0%   { width: 0px;  }
-  100% { width: 60%;  }
-}
-@-moz-keyframes illustrator {
-  0%   { width: 0px;  }
-  100% { width: 55%;  }
-}
-@-moz-keyframes reactjs {
-  0%   { width: 0px;  }
-  100% { width: 50%;  }
-}
-@-moz-keyframes css {
-  0%   { width: 0px;  }
-  100% { width: 90%;  }
-}
-@-moz-keyframes html5 {
-  0%   { width: 0px;  }
-  100% { width: 80%;  }
-}
-@-moz-keyframes vuejs {
-  0%   { width: 0px;  }
-  100% { width: 50%;  }
-}
-@-moz-keyframes mongodb {
-  0%   { width: 0px;  }
-  100% { width: 80%;  }
+.bar .progress-line p {
+  height: 100%;
+  color: #c5c5c5;
+  font-size: 12px;
+  font-weight: bold;
+  position: absolute;
+  margin-left: 8px;
+  top: 3px;
+  opacity: 0;
+  animation: showText 2s 0.5s cubic-bezier(1, 0, 0.5, 1) forwards;
 }
 
-@-webkit-keyframes photoshop {
-  0%   { width: 0px;  }
-  100% { width: 60%;  }
+@keyframes animate {
+  100% {
+    transform: scaleX(1);
+  }
 }
-@-webkit-keyframes illustrator {
-  0%   { width: 0px;  }
-  100% { width: 55%;  }
-}
-@-webkit-keyframes reactjs {
-  0%   { width: 0px;  }
-  100% { width: 50%;  }
-}
-@-webkit-keyframes css {
-  0%   { width: 0px;  }
-  100% { width: 90%;  }
-}
-@-webkit-keyframes html5 {
-  0%   { width: 0px;  }
-  100% { width: 80%;  }
-}
-@-webkit-keyframes vuejs {
-  0%   { width: 0px;  }
-  100% { width: 50%;  }
-}
-@-webkit-keyframes mongodb {
-  0%   { width: 0px;  }
-  100% { width: 80%;  }
-}  */
 
 /* ------------------------------------------------------------------
 /* e. Static Image
@@ -486,7 +503,6 @@ ul#nav a.btn:hover {
   background-size: cover !important;
   -webkit-background-size: cover !important;
   background-attachment: fixed;
-
   position: relative;
   min-height: 150px;
   width: 100%;
@@ -505,7 +521,8 @@ ul#nav a.btn:hover {
   font-size: 105%;
 }
 
-#contact .section-head {
+#contact .section-head h2 {
+  color: #e9e7e7;
   margin-bottom: 42px;
 }
 
@@ -513,10 +530,24 @@ ul#nav a.btn:hover {
   font: 24px/34px "opensans-bold", sans-serif;
   color: #e9e7e7;
   margin-bottom: 12px;
+  margin-top: 40px;
 }
 
 #contact p {
   padding: 0px;
+}
+
+#contact span a {
+  cursor: default;
+  text-decoration: none;
+}
+
+#contact span a:link, #contact span a:visited, #contact span a:active { color: #636363 }
+
+#contact span a:hover {
+  color: #c5c5c5;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
 #contact .contact-info:hover {
@@ -570,6 +601,106 @@ ul#nav a.btn:hover {
   margin-bottom: 10px;
 }
 
+/* contact form */
+#contact form { margin-bottom: 30px; }
+#contact label {
+  font: 15px/24px 'opensans-bold', sans-serif;
+  margin: 12px 0;
+  color: #e9e7e7;
+  display: block;
+  float: left;
+  width: 26%;
+}
+
+#contact textarea {
+  resize: none;
+}
+
+#contact input,
+#contact textarea,
+#contact select {
+  padding: 18px 20px;
+	color: rgb(250, 229, 229);
+	background: #373233;
+	margin-top: 42px;
+	border: 0;
+	outline: none;
+  font-size: 15px;
+  line-height: 24px;
+  width: 65%;
+  border-radius: 3px;
+}
+
+#contact input:focus,
+#contact textarea:focus,
+#contact select:focus {
+	color: #ffffff;
+  background-color: #1a7ed3;
+}
+
+#contact button.submit {
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	color:#ffffff;
+  background: #0D0D0D;
+	border: none;
+  cursor: pointer;
+  height: auto;
+  display: inline-block;
+	border-radius: 3px;
+  margin-left: 26%;
+  margin-top: 42px;
+}
+
+#contact button.submit:hover {
+	color: #0D0D0D;
+	background: #ffffff;
+}
+
+#contact span.required {
+	color: #1a7ed3;
+	font-size: 13px;
+}
+
+#message-warning, #message-success {
+  display: none;
+	background: #0F0F0F;
+	padding: 24px 24px;
+	margin-bottom: 36px;
+  width: 65%;
+  margin-left: 26%;
+}
+
+div[id^="message-missing-"] {
+  display: none;
+  background: #0F0F0F;
+	padding: 12px 12px;
+	margin-bottom: 12px;
+  width: 65%;
+  margin-left: 26%;
+}
+
+#message-warning, div[id^="message-missing-"] {
+  color: #D72828;
+}
+
+#message-success { 
+  color: #11ABB0;
+}
+
+#message-warning i,
+#message-success i,
+div[id^="message-missing-"] i {
+  margin-right: 10px;
+}
+
+#image-loader {
+  display: none;
+  position: relative;
+  left: 18px;
+  top: 17px;
+}
+
 /* ------------------------------------------------------------------ */
 /* g. Footer
 /* ------------------------------------------------------------------ */
@@ -587,16 +718,24 @@ footer a,
 footer a:visited {
   color: #525252;
 }
+
 footer a:hover,
-footer a:focus {
-  color: #fff;
+footer a:focus,
+footer .copyright li:hover,
+footer .copyright li:focus {
+  color: #ffffff;
+  font-weight: bold;
 }
 
-/* copyright */
+footer .copyright li:hover {
+  transition: all 0.4s ease-in-out;
+}
+
 footer .copyright {
   margin: 0;
   padding: 0;
 }
+
 footer .copyright li {
   display: inline-block;
   margin: 0;
@@ -604,20 +743,22 @@ footer .copyright li {
   line-height: 24px;
   color: #525252;
 }
+
 .ie footer .copyright li {
   display: inline;
 }
+
 footer .copyright li:before {
   content: "\2022";
   padding-left: 10px;
   padding-right: 10px;
   color: #525252;
 }
+
 footer .copyright li:first-child:before {
   display: none;
 }
 
-/* social links */
 footer .social-links {
   margin: 18px 0 30px 0;
   padding: 0;
@@ -635,7 +776,6 @@ footer .social-links li:first-child {
   margin-left: 0;
 }
 
-/* Go To Top Button */
 #go-top {
   position: absolute;
   top: -24px;
@@ -661,6 +801,7 @@ footer .social-links li:first-child {
   line-height: 60px;
   border-radius: 100%;
 }
+
 #go-top a:hover {
   background-color: #1a7ed3;
 }

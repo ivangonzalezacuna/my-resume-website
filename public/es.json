@@ -1,5 +1,6 @@
 {
   "main": {
+    "key": "es-main",
     "navhome": "Inicio",
     "navabout": "Sobre Mi",
     "naveducation": "Estudios",
@@ -15,7 +16,7 @@
     "name": "Iván González",
     "occupation": "I+D",
     "company": "Universidad de Vigo",
-    "contactmessage": "Here is where you should write your message to readers to have them get in contact with you",
+    "contactmessage": "Contacta conmigo",
     "email": "ivangonzalezacuna@gmail.com",
     "phone": "+34 654 46 26 02",
     "address": {
@@ -51,7 +52,19 @@
         "url": "https://www.facebook.com/ivan.gonzalezacuna/",
         "className": "fa fa-facebook"
       }
-    ]
+    ],
+    "contact": {
+      "formName": "Nombre",
+      "formEmail": "Correo",
+      "formSubject":"Asunto",
+      "formMessage": "Mensaje",
+      "formSubmit": "Enviar",
+      "formError": "Error al enviar el mensaje",
+      "formSuccess": "Tu mensaje ha sido enviado, muchas gracias!",
+      "formMissingName": "Debe introducir un nombre",
+      "formMissingEmail": "Debe introducir un correo electrónico",
+      "formMissingMessage": "Debe introducir un mensaje"
+    }
   },
   "about": {
     "title": "Sobre mí",
@@ -92,46 +105,101 @@
     "skilltext": "Conocimiento en el uso de herramientas para organización y comunicación de equipos como Trello, Slack, Confluence o Jira. Además, tengo buenos conocimientos usando Microsoft Office",
     "skills1": [
       {
+        "id": "Java",
         "name": "Java",
         "level": "70%"
       },
       {
+        "id": "Go",
         "name": "Go",
         "level": "75%"
       },
       {
+        "id": "C",
         "name": "C",
         "level": "45%"
       },
       {
+        "id": "Python",
         "name": "Python",
         "level": "50%"
       },
       {
-        "name": "Des. Web (MEAN Stack)",
+        "id": "WebDev",
+        "name": "Desarrollo web",
+        "subname": "MEAN Stack, HTML, CSS...",
         "level": "40%"
       }
     ],
     "skills2": [
       {
+        "id": "Linux",
         "name": "Linux",
         "level": "60%"
       },
       {
+        "id": "Git",
         "name": "Git",
         "level": "65%"
       },
       {
+        "id": "Docker",
         "name": "Docker",
         "level": "40%"
       },
       {
-        "name": "BBDD (MySQL, PostgreSQL, ...)",
+        "id": "DDBB",
+        "name": "Bases de datos",
+        "subname": "MySQL, PostgreSQL, RethinkDB...",
         "level": "65%"
       },
       {
-        "name": "Des. Apps (Android & iOS)",
+        "id": "AppDev",
+        "name": "Desarrollo aplicaciones",
+        "subname": "Android & iOS (Swift)",
         "level": "60%"
+      }
+    ]
+  },
+  "portfolio":{
+    "projects": [
+      {
+        "title":"Canadian Wanderlust",
+        "category":"My Travel Blog for my post-university travels",
+        "image":"canadian-wanderlust.jpg",
+        "url":"https://www.canadianwanderlust.com"
+      },
+      {
+        "title":"Fury Fighting Gear",
+        "category":"(offline now) A fighting gear company I started",
+        "image":"fury-fighting-gear.jpg",
+        "url":"http://www.timbakerdev.com"
+      },
+      {
+        "title":"Original Thai Food",
+        "category":"Website I built for a restaurant I like in Thailand",
+        "image":"original-thai-food.jpg",
+        "url":"https://original-thai-food.herokuapp.com/index.html"
+      },
+      {
+        "title":"Resume Website",
+        "category":"A React based resume website template",
+        "image":"resume-website.jpg",
+        "url":"https://github.com/tbakerx/react-resume-template"
+      },
+      {
+        "title":"Smirkspace",
+        "category":"(MVP Only) A React and Meteor based chat University project.",
+        "image":"smirkspace.jpg",
+        "url":"http://www.smirkspace.com"
+      }
+    ]
+  },
+  "testimonials":{
+    "testimonials":[
+      {
+        "text":"I have had the opportunity to work with Tim on multiple occasions which has always been a pleasure. He is driven and motivated with a consistently positive attitude. Tim excels at communicating with others and is always willing to work hard until he solves the problem at hand.",
+        "user":"Alastair Beaumont - Web Developer at AppColony"
       }
     ]
   }

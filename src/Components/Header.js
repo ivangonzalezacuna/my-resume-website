@@ -18,10 +18,11 @@ class Header extends Component {
       var company = this.props.data.company;
       var city = this.props.data.address.city;
       var country = this.props.data.address.state;
+      var headerKey=this.props.data.key;
       var networks = this.props.data.social.map(function (network) {
         return (
           <li key={network.name}>
-            <a href={network.url}>
+            <a href={network.url} target="_blank" rel="noopener noreferrer">
               <i className={network.className}></i>
             </a>
           </li>
@@ -70,19 +71,23 @@ class Header extends Component {
                 {navcontact}
               </a>
             </li>
-            <li class="lang">
-              <a type="button" id={this.props.classLangEN} class="btn" onClick={this.props.en}>
-                <span>EN</span>
+            <li className="lang">
+              <a type="button" className="smoothscroll" id={this.props.classLangEN} class="btn" href="#en" onClick={this.props.en}>
+                <span>
+                  <img className="langImg" alt="Select english" src="images/reino-unido.png"></img>
+                </span>
               </a>
-              <a type="button" id={this.props.classLangES} class="btn" onClick={this.props.es}>
-                <span>ES</span>
+              <a type="button" className="smoothscroll" id={this.props.classLangES} class="btn" href="#es" onClick={this.props.es}>
+                <span>
+                  <img className="langImg" alt="Select spanish" src="images/espana.png"></img>
+                </span>
               </a>
             </li>
           </ul>
         </nav>
 
         <div className="row banner">
-          <div className="banner-text">
+          <div key={headerKey} className="banner-text">
             <h1 className="responsive-headline">
               {titleintro} {name}
             </h1>
@@ -91,7 +96,7 @@ class Header extends Component {
               {desc3} <span>{company}</span>
             </h3>
             <hr />
-            <ul className="social">{networks}</ul>
+            <ul className="social" key={headerKey}>{networks}</ul>
           </div>
         </div>
 
@@ -106,53 +111,3 @@ class Header extends Component {
 }
 
 export default Header;
-/*
-<nav id="nav-wrap">
-          <a className="mobile-btn" href="#nav-wrap" title="Show navigation">
-            Show navigation
-          </a>
-          <a className="mobile-btn" href="#home" title="Hide navigation">
-            Hide navigation
-          </a>
-
-          <ul id="nav" className="nav">
-            <li className="current">
-              <a className="smoothscroll" href="#home">
-                {navhome}
-              </a>
-            </li>
-            <li>
-              <a className="smoothscroll" href="#about">
-                {navabout}
-              </a>
-            </li>
-            <li>
-              <a className="smoothscroll" href="#education">
-                {naveducation}
-              </a>
-            </li>
-            <li>
-              <a className="smoothscroll" href="#work">
-                {navwork}
-              </a>
-            </li>
-            <li>
-              <a className="smoothscroll" href="#skills">
-                {navskills}
-              </a>
-            </li>
-            <li>
-              <a className="smoothscroll" href="#contact">
-                {navcontact}
-              </a>
-            </li>
-            <li class="langsection">
-              <a type="button" class="btn" onClick={this.props.en}>
-                {langEN}
-              </a>
-              <a type="button" class="btn" onClick={this.props.es}>
-                {langES}
-              </a>
-            </li>
-          </ul>
-        </nav> */

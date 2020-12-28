@@ -1,5 +1,6 @@
 {
   "main": {
+    "key": "en-main",
     "navhome": "Home",
     "navabout": "About",
     "naveducation": "Education",
@@ -15,7 +16,7 @@
     "name": "Iván González",
     "occupation": "R&D",
     "company": "University of Vigo",
-    "contactmessage": "Here is where you should write your message to readers to have them get in contact with you",
+    "contactmessage": "Contact me",
     "email": "ivangonzalezacuna@gmail.com",
     "phone": "+34 654 46 26 02",
     "address": {
@@ -51,7 +52,19 @@
         "url": "https://www.facebook.com/ivan.gonzalezacuna/",
         "className": "fa fa-facebook"
       }
-    ]
+    ],
+    "contact": {
+      "formName": "Name",
+      "formEmail": "Email",
+      "formSubject":"Subject",
+      "formMessage": "Message",
+      "formSubmit": "Submit",
+      "formError": "Error sending message",
+      "formSuccess": "Your message was sent, thank you!",
+      "formMissingName": "Contact name must be provided",
+      "formMissingEmail": "Email must be provided",
+      "formMissingMessage": "Message can't be empty"
+    }
   },
   "about": {
     "title": "About me",
@@ -92,46 +105,101 @@
     "skilltext": "Usage knowledge in tools for teams' organization and communication such as Trello, Slack, Confluence or Jira. Also good knowledge in Microsoft Office",
     "skills1": [
       {
+        "id": "Java-en",
         "name": "Java",
         "level": "70%"
       },
       {
+        "id": "Go-en",
         "name": "Go",
         "level": "75%"
       },
       {
+        "id": "C-en",
         "name": "C",
         "level": "45%"
       },
       {
+        "id": "Python-en",
         "name": "Python",
         "level": "50%"
       },
       {
-        "name": "Web Devt. (MEAN Stack)",
+        "id": "WebDev-en",
+        "name": "Web Development",
+        "subname": "MEAN Stack, HTML, CSS...",
         "level": "40%"
       }
     ],
     "skills2": [
       {
+        "id": "Linux-en",
         "name": "Linux",
         "level": "60%"
       },
       {
+        "id": "Git-en",
         "name": "Git",
         "level": "65%"
       },
       {
+        "id": "Docker-en",
         "name": "Docker",
         "level": "40%"
       },
       {
-        "name": "DDBB (MySQL, PostgreSQL, ...)",
+        "id": "DDBB-en",
+        "name": "Databases",
+        "subname": "MySQL, PostgreSQL, RethinkDB...",
         "level": "65%"
       },
       {
-        "name": "App Devt. (Android & iOS)",
+        "id": "AppDev-en",
+        "name": "App Development",
+        "subname": "Android & iOS (Swift)",
         "level": "60%"
+      }
+    ]
+  },
+  "portfolio":{
+    "projects": [
+      {
+        "title":"Canadian Wanderlust",
+        "category":"My Travel Blog for my post-university travels",
+        "image":"canadian-wanderlust.jpg",
+        "url":"https://www.canadianwanderlust.com"
+      },
+      {
+        "title":"Fury Fighting Gear",
+        "category":"(offline now) A fighting gear company I started",
+        "image":"fury-fighting-gear.jpg",
+        "url":"http://www.timbakerdev.com"
+      },
+      {
+        "title":"Original Thai Food",
+        "category":"Website I built for a restaurant I like in Thailand",
+        "image":"original-thai-food.jpg",
+        "url":"https://original-thai-food.herokuapp.com/index.html"
+      },
+      {
+        "title":"Resume Website",
+        "category":"A React based resume website template",
+        "image":"resume-website.jpg",
+        "url":"https://github.com/tbakerx/react-resume-template"
+      },
+      {
+        "title":"Smirkspace",
+        "category":"(MVP Only) A React and Meteor based chat University project.",
+        "image":"smirkspace.jpg",
+        "url":"http://www.smirkspace.com"
+      }
+    ]
+  },
+  "testimonials":{
+    "testimonials":[
+      {
+        "text":"I have had the opportunity to work with Tim on multiple occasions which has always been a pleasure. He is driven and motivated with a consistently positive attitude. Tim excels at communicating with others and is always willing to work hard until he solves the problem at hand.",
+        "user":"Alastair Beaumont - Web Developer at AppColony"
       }
     ]
   }

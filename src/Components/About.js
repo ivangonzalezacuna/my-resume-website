@@ -22,13 +22,13 @@ class About extends Component {
           </div>
           <div className="nine columns main-col">
             <h2>{title}</h2>
-
             <p>{bio}</p>
             <div className="row">
               <div className="columns download">
                 <p>
-                  <a href={resumeDownload} className="button">
-                    <i className="fa fa-download"></i>{download}
+                  <a href={resumeDownload} className="button" target="_blank" rel="noopener noreferrer">
+                    <i className="fa fa-download"></i>
+                    {download}
                   </a>
                 </p>
               </div>

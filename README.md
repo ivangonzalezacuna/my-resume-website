@@ -1,6 +1,11 @@
 
 # Resume React Page 
 
+To install all the dependencies from `package.json`:
+```bashrc
+npm install
+```
+
 To deploy the app as tester:
 ```bashrc
 npm start
