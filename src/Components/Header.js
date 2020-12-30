@@ -8,6 +8,8 @@ class Header extends Component {
       var naveducation = this.props.data.naveducation;
       var navwork = this.props.data.navwork;
       var navskills = this.props.data.navskills;
+      //var navportfolio = this.props.data.navportfolio;
+      //var navtestimonials = this.props.data.navtestimonials;
       var navcontact = this.props.data.navcontact;
       var titleintro = this.props.data.titleintro;
       var desc1 = this.props.data.desc1;
@@ -66,6 +68,16 @@ class Header extends Component {
                 {navskills}
               </a>
             </li>
+            {/*<li>
+              <a className="smoothscroll" href="#portfolio">
+                {navportfolio}
+              </a>
+            </li>
+            <li>
+              <a className="smoothscroll" href="#testimonials">
+                {navtestimonials}
+              </a>
+            </li>*/}
             <li>
               <a className="smoothscroll" href="#contact">
                 {navcontact}
@@ -96,7 +108,7 @@ class Header extends Component {
               {desc3} <span>{company}</span>
             </h3>
             <hr />
-            <ul className="social" key={headerKey}>{networks}</ul>
+            <ul className="social">{networks}</ul>
           </div>
         </div>
 

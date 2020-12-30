@@ -8,6 +8,8 @@ import About from "./Components/About";
 import Education from "./Components/Education";
 import Work from "./Components/Work";
 import Skills from "./Components/Skills";
+//import Portfolio from "./Components/Portfolio";
+//import Testimonials from "./Components/Testimonials";
 import Contact from "./Components/Contact";
 import StaticImage from "./Components/StaticImage";
 
@@ -27,13 +29,21 @@ class App extends Component {
     ReactGA.pageview(window.location.pathname);
   }
 
-  getResumeDataEN() {
+  getResumeDataEN(init) {
+    //const load = document.getElementById('siteLoading')
     $.ajax({
       url: "/en.json",
       dataType: "json",
       cache: false,
       success: function (data) {
+        $('#siteLoading').show();
         this.setState({ resumeData: data, classEN: "selected", classES: "" });
+        //if (init === "init") {
+          setTimeout(()=>{ 
+            //load.outerHTML='';
+            $('#siteLoading').fadeOut();
+          },500)
+        //}
       }.bind(this),
       error: function (xhr, status, err) {
         console.log(err);
@@ -48,7 +58,11 @@ class App extends Component {
       dataType: "json",
       cache: false,
       success: function (data) {
+        $('#siteLoading').show();
         this.setState({ resumeData: data, classEN: "", classES: "selected"  });
+        setTimeout(()=>{ 
+          $('#siteLoading').fadeOut();
+        },500)
       }.bind(this),
       error: function (xhr, status, err) {
         console.log(err);
@@ -58,7 +72,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.getResumeDataEN("en");
+    this.getResumeDataEN("init");
   }
 
   render() {
@@ -84,6 +98,12 @@ class App extends Component {
           title={this.state.resumeData.main}
           data={this.state.resumeData.skills}
         />
+        {/*<Portfolio
+          data={this.state.resumeData.portfolio}
+        />
+        <Testimonials
+          data={this.state.resumeData.testimonials}
+        />*/}
         <StaticImage data={this.state.resumeData.main} />
         <Contact data={this.state.resumeData.main} />
         <Footer data={this.state.resumeData.main} />
