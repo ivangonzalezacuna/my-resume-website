@@ -299,6 +299,11 @@
     font-size: 18px;
     line-height: 54px;
   }
+
+  /* Adapt 404 Error Page */
+  .msg404 > .text-2 {
+    width: 100%;
+  }
 }
 
 /* mobile narrow

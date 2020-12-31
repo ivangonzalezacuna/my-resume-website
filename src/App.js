@@ -1,5 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import ReactGA from "react-ga";
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import $ from "jquery";
 import "./App.css";
 import Header from "./Components/Header";
@@ -12,6 +13,7 @@ import Skills from "./Components/Skills";
 //import Testimonials from "./Components/Testimonials";
 import Contact from "./Components/Contact";
 import StaticImage from "./Components/StaticImage";
+import NotFoundPage from "./Components/NotFoundPage";
 
 class App extends Component {
   constructor(props) {
@@ -30,20 +32,27 @@ class App extends Component {
   }
 
   getResumeDataEN(init) {
-    //const load = document.getElementById('siteLoading')
+    if (this.state.classEN === "selected") {
+      return false;
+    }
     $.ajax({
       url: "/en.json",
       dataType: "json",
       cache: false,
       success: function (data) {
-        $('#siteLoading').show();
+        if (init !== "404") {
+          $('#siteLoading').show();
+        } else if (init === "404") {
+          $('#siteLoading').hide();
+        }
         this.setState({ resumeData: data, classEN: "selected", classES: "" });
-        //if (init === "init") {
-          setTimeout(()=>{ 
-            //load.outerHTML='';
-            $('#siteLoading').fadeOut();
-          },500)
-        //}
+        var timeout = 500;
+        if (init === "404") {
+          timeout = 0;
+        }
+        setTimeout(()=>{ 
+          $('#siteLoading').hide();
+        },timeout)
       }.bind(this),
       error: function (xhr, status, err) {
         console.log(err);
@@ -52,17 +61,28 @@ class App extends Component {
     });
   }
 
-  getResumeDataES() {
+  getResumeDataES(init) {
+    if (this.state.classES === "selected") {
+      return false;
+    }
     $.ajax({
       url: "/es.json",
       dataType: "json",
       cache: false,
       success: function (data) {
-        $('#siteLoading').show();
-        this.setState({ resumeData: data, classEN: "", classES: "selected"  });
+        if (init !== "404") {
+          $('#siteLoading').show();
+        } else if (init === "404") {
+          $('#siteLoading').hide();
+        }
+        this.setState({ resumeData: data, classEN: "", classES: "selected" });
+        var timeout = 500;
+        if (init === "404") {
+          timeout = 0;
+        }
         setTimeout(()=>{ 
-          $('#siteLoading').fadeOut();
-        },500)
+          $('#siteLoading').hide();
+        },timeout)
       }.bind(this),
       error: function (xhr, status, err) {
         console.log(err);
@@ -72,41 +92,54 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.getResumeDataEN("init");
+    if (window.location.pathname === "/") {
+      this.getResumeDataEN("init");
+    } else {
+      this.getResumeDataEN("404");
+    }
   }
 
   render() {
     return (
       <div className="App">
-        <Header
-          classLangEN={this.state.classEN}
-          classLangES={this.state.classES}
-          en={this.getResumeDataEN}
-          es={this.getResumeDataES}
-          data={this.state.resumeData.main}
-        />
-        <About data={this.state.resumeData.about} />
-        <Work
-          title={this.state.resumeData.main}
-          data={this.state.resumeData.work}
-        />
-        <Education
-          title={this.state.resumeData.main}
-          data={this.state.resumeData.education}
-        />
-        <Skills
-          title={this.state.resumeData.main}
-          data={this.state.resumeData.skills}
-        />
-        {/*<Portfolio
-          data={this.state.resumeData.portfolio}
-        />
-        <Testimonials
-          data={this.state.resumeData.testimonials}
-        />*/}
-        <StaticImage data={this.state.resumeData.main} />
-        <Contact data={this.state.resumeData.main} />
-        <Footer data={this.state.resumeData.main} />
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" render={() => 
+            <Fragment>
+              <Header
+                classLangEN={this.state.classEN}
+                classLangES={this.state.classES}
+                en={this.getResumeDataEN}
+                es={this.getResumeDataES}
+                data={this.state.resumeData.main}
+              />
+              <About data={this.state.resumeData.about} />
+              <Work
+                title={this.state.resumeData.main}
+                data={this.state.resumeData.work}
+              />
+              <Education
+                title={this.state.resumeData.main}
+                data={this.state.resumeData.education}
+              />
+              <Skills
+                title={this.state.resumeData.main}
+                data={this.state.resumeData.skills}
+              />
+              {/*<Portfolio
+                data={this.state.resumeData.portfolio}
+              />
+              <Testimonials
+                data={this.state.resumeData.testimonials}
+              />*/}
+              <StaticImage data={this.state.resumeData.main} />
+              <Contact data={this.state.resumeData.main} />
+              <Footer data={this.state.resumeData.main} />
+            </Fragment>
+            } />
+            <Route path="*" component={NotFoundPage} />
+          </Switch>
+        </BrowserRouter>
       </div>
     );
   }
