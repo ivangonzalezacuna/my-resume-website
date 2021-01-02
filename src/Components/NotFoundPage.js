@@ -18,7 +18,7 @@ class NotFoundPage extends Component {
       $('.number').each(function () {
         var $this = $(this);
         $({ Counter: 0 }).animate({ Counter: $this.text() }, {
-          duration: 1500,
+          duration: 1000,
           easing: 'swing',
           step: function () {
             $this.text(Math.ceil(this.Counter));
@@ -39,7 +39,7 @@ class NotFoundPage extends Component {
               <div className="number" data-count="404">404</div>
               <div className="text text-1">Page not found</div>
               <div className="text text-2">The page you are looking for might have been removed, had its name changed or is temporarily unavailable</div>
-              <Link to="/" className="btn">Home Page</Link>
+              <Link to="/" onClick={() => {window.location.href="/"}} className="btn">Home Page</Link>
             </div>
           </div>
         </div>

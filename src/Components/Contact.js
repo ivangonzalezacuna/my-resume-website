@@ -29,7 +29,7 @@ class Contact extends Component {
     return (
     <section id="contact">
       <div className="row section-head">
-        <div className="four columns header-col">
+        <div className="four columns header-col" id="contactFormTitle">
           <h2><span>{contactmessage}</span></h2>
         </div>
       </div>
@@ -41,12 +41,12 @@ class Contact extends Component {
                 <label htmlFor="contactName">{formname} <span className="required">*</span></label>
                 <input type="text" size="35" id="contactName" name="contactName" onChange={this.handleChange}/>
               </div>
-              <div id="message-missing-name"><i className="fa fa-info-circle"></i>{formmissingname}</div>
+              <div id="message-missing-name"><i className="fas fa-exclamation-circle"></i>{formmissingname}</div>
               <div>
                 <label htmlFor="contactEmail">{formmail} <span className="required">*</span></label>
                 <input type="email" size="35" id="contactEmail" name="contactEmail" onChange={this.handleChange}/>
               </div>
-              <div id="message-missing-email"><i className="fa fa-info-circle"></i>{formmissingemail}</div>
+              <div id="message-missing-email"><i className="fas fa-exclamation-circle"></i>{formmissingemail}</div>
               <div>
                 <label htmlFor="contactSubject">{formsubject}</label>
                 <input type="text" defaultValue="" size="35" id="contactSubject" name="contactSubject" onChange={this.handleChange}/>
@@ -55,52 +55,39 @@ class Contact extends Component {
                 <label htmlFor="contactMessage">{formmessage} <span className="required">*</span></label>
                 <textarea cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
               </div>
-              <div id="message-missing-message"><i className="fa fa-info-circle"></i>{formmissingmessage}</div>
+              <div id="message-missing-message"><i className="fas fa-exclamation-circle"></i>{formmissingmessage}</div>
               <div>
                 <button className="submit">{formsubmit}</button>
                 <span id="image-loader">
-                  <img alt="" src="images/loader.gif" />
+                  <img alt="" src="images/loader.svg"/>
                 </span>
               </div>
             </fieldset>
           </form>
-          <div id="message-warning">{formerror}</div>
+          <div id="message-warning">
+            <i className="fas fa-exclamation-circle"></i>{formerror}
+          </div>
           <div id="message-success">
-            <i className="fa fa-check"></i>{formsuccess}<br />
+            <i className="fas fa-check-circle"></i>{formsuccess}<br />
           </div>
         </div>
         <aside className="four columns footer-widgets">
           <div className="widget widget_contact">
             <h2>{contactdetails}</h2>
-            <p className="address">
-              <span className="contact-info">
-                <i className="icon-name"></i>
-                {name}
-              </span>
+            <div className="address">
+              <span className="contact-info"><i className="icon fas fa-user fa-lg"></i>{name}</span>
               <br />
-              <span className="contact-info">
-                <i className="icon-phone"></i>
-                {phone}
-              </span>
+              <span className="contact-info"><i className="icon fas fa-phone fa-lg"></i>{phone}</span>
               <br />
-              <span className="contact-info">
-                <i className="icon-mail"></i>
-                <a href={mailto}>{email}</a>
-              </span>
-            </p>
+              <span className="contact-info"><i className="icon fas fa-envelope fa-lg"></i><a href={mailto}>{email}</a></span>
+            </div>
 				  </div>
           <div className="widget widget_contact">
             <h2>{contactaddress}</h2>
             <p className="address">
-              <span className="contact-info">
-                <i className="icon icon-home"></i>
-                {street}
-              </span>
+              <span className="contact-info"><i className="icon fas fa-home fa-lg"></i>{street}</span>
               <br />
-              <span className="contact-info">
-                <i className="icon icon-earth"></i>
-                {zip} {city} - {state}
-              </span>
+              <span className="contact-info"><i className="icon fas fa-globe-europe fa-lg"></i>{zip} {city} - {state}</span>
             </p>
 				  </div>
         </aside>

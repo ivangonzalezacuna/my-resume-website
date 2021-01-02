@@ -35,16 +35,16 @@ class App extends Component {
     if (this.state.classEN === "selected") {
       return false;
     }
+    if (init === "404") {
+      $('#siteLoading').hide();
+    } else if (init !== "404") {
+      $('#siteLoading').show();
+    }
     $.ajax({
       url: "/en.json",
       dataType: "json",
       cache: false,
       success: function (data) {
-        if (init !== "404") {
-          $('#siteLoading').show();
-        } else if (init === "404") {
-          $('#siteLoading').hide();
-        }
         this.setState({ resumeData: data, classEN: "selected", classES: "" });
         var timeout = 500;
         if (init === "404") {
@@ -65,16 +65,16 @@ class App extends Component {
     if (this.state.classES === "selected") {
       return false;
     }
+    if (init === "404") {
+      $('#siteLoading').hide();
+    } else if (init !== "404") {
+      $('#siteLoading').show();
+    }
     $.ajax({
       url: "/es.json",
       dataType: "json",
       cache: false,
       success: function (data) {
-        if (init !== "404") {
-          $('#siteLoading').show();
-        } else if (init === "404") {
-          $('#siteLoading').hide();
-        }
         this.setState({ resumeData: data, classEN: "", classES: "selected" });
         var timeout = 500;
         if (init === "404") {

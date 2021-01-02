@@ -11,8 +11,8 @@
     margin: 0 auto 12px auto;
   }
 
-  #contact p span {
-    font-size: 0.85em;
+  #contact .contact-info {
+    font-size: 13px;
   }
 }
 
@@ -74,8 +74,8 @@
   #contact h2 {
     font-size: 1.3em;
   }
-  #contact p span {
-    font-size: 0.9em;
+  #contact .contact-info {
+    font-size: 14px;
   }
 }
 
@@ -243,7 +243,8 @@
     padding-right: 30px;
   }
   .resume h3,
-  .resume .resume-sec-title {
+  .resume .resume-sec-title,
+  .resume .date{
     text-align: center;
   }
 
@@ -354,12 +355,20 @@
     display: block;
   }
   #about .download .button {
-    width: 60%;
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     display: block;
-    padding: 15px 20px;
+    padding: 15px 10px;
+  }
+
+  #about .download .button i {
+    font-size: 15px;
+  }
+
+  #contact .contact-info {
+    font-size: 13px;
   }
 
   /* footer

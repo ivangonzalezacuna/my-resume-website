@@ -8,9 +8,8 @@ class Work extends Component {
         return (
           <div key={work.company}>
             <h3>{work.company}</h3>
-            <p className="resume-sec-title">
-              {work.title} <span>&bull;</span> <span className="date">{work.years}</span>
-            </p>
+            <p className="resume-sec-title"><i className="fas fa-briefcase"></i>{work.title}</p>
+            <p className="date"><i className="fas fa-calendar-alt"></i>{work.years}</p>
             <p className="description">{work.description}</p>
           </div>
         );

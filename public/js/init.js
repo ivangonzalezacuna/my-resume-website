@@ -177,6 +177,8 @@
                $('#message-warning').hide();
                $('#contactForm').fadeOut();
                $('#message-success').fadeIn();
+               $('.footer-widgets').addClass('twelve').removeClass('four');
+               $('#contactFormTitle').hide();
             } else {
                $('#image-loader').fadeOut();
                $('#message-warning').fadeIn();

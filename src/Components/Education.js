@@ -8,9 +8,8 @@ class Education extends Component {
         return (
           <div key={education.school}>
             <h3>{education.school}</h3>
-            <p className="resume-sec-title">
-              {education.degree}<span>&bull;</span><span className="date">{education.graduated}</span>
-            </p>
+            <p className="resume-sec-title"><i className="fas fa-user-graduate"></i>{education.degree}</p>
+            <p className="date"><i className="fas fa-calendar-alt"></i>{education.graduated}</p>
             <p className="description">{education.description}</p>
           </div>
         );

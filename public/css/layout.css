@@ -1,5 +1,6 @@
 /*
    TOC:
+   I. Colors
    a. General Styles
    b. Header Styles
    c. About Section
@@ -14,11 +15,34 @@
 ===================================================================== */
 
 /* ------------------------------------------------------------------ */
+/* I. Colors
+/* ------------------------------------------------------------------ */
+:root {
+  --body-background: #0F0F0F;
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-white-opacity-87: #FFFFFFDE;
+  --color-gray-nav: #333333;
+  --color-gray-light-1: #F3F3F3;
+  --color-gray-light-2: #C5C5C5;
+  --color-gray-light-3: #BDBDBD;
+  --color-gray-light-4: #A7A7A7;
+  --color-gray-dark-1: #525252;
+  --color-gray-dark-2: #444444;
+  --color-gray-dark-3: #313131;
+  --color-gray-dark-4: #2B2B2B;
+  --color-blue-light: #1A7ED3;
+  --color-blue-dark: #335384;
+  --color-red: #D72828;
+  --color-green: #11ABB0;
+}
+
+/* ------------------------------------------------------------------ */
 /* a. General Styles
 /* ------------------------------------------------------------------ */
 
 body {
-  background: #0f0f0f;
+  background-color: var(--body-background);
   cursor: default;
 }
 
@@ -64,7 +88,7 @@ header .banner-text {
 
 header .banner-text h1 {
   font: 90px/1.1em "opensans-bold", sans-serif;
-  color: #ffffff;
+  color: var(--color-white);
   letter-spacing: -2px;
   margin: 0 auto 18px auto;
   text-shadow: 0px 1px 3px #000000cc;
@@ -74,7 +98,7 @@ header .banner-text h1 {
 
 header .banner-text h3 {
   font: 18px/1.9em "librebaskerville-regular", serif;
-  color: #bdbdbd;
+  color: var(--color-gray-light-3);
   margin: 0 auto;
   width: 70%;
   text-shadow: 0px 1px 2px #00000080;
@@ -84,14 +108,14 @@ header .banner-text h3 {
 
 header .banner-text h3 span,
 header .banner-text h3 a {
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 header .banner-text hr {
   width: 60%;
   margin: 18px auto 24px auto;
-  border-color: #2f2d2e;
-  border-color: #9696961a;
+  opacity: 0;
+  animation: showBar 0.5s 1.5s linear forwards;
 }
 
 /* header social links */
@@ -111,11 +135,11 @@ header .social li {
 }
 
 header .social li a {
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 header .social li a:hover {
-  color: #1a7ed3;
+  color: var(--color-blue-light);
 }
 
 /* scrolldown link */
@@ -124,13 +148,13 @@ header .scrolldown a {
   bottom: 30px;
   left: 50%;
   margin-left: -29px;
-  color: #ffffff;
+  color: var(--color-white);
   display: block;
   height: 42px;
   width: 42px;
   font-size: 42px;
   line-height: 42px;
-  color: #ffffff;
+  color: var(--color-white);
   border-radius: 100%;
 
   -webkit-transition: all 0.3s ease-in-out;
@@ -140,7 +164,7 @@ header .scrolldown a {
 }
 
 header .scrolldown a:hover {
-  color: #1a7ed3;
+  color: var(--color-blue-light);
 }
 
 /* primary navigation
@@ -168,13 +192,13 @@ header .scrolldown a:hover {
 }
 
 .opaque {
-  background-color: #333333;
+  background-color: var(--color-gray-nav);
 }
 
 /* hide toggle button */
 #nav-wrap > a.mobile-btn {
   display: none;
-  background-color: #1a7ed3;
+  background-color: var(--color-blue-light);
 }
 
 ul#nav {
@@ -200,7 +224,7 @@ ul#nav li a {
   line-height: 32px;
   text-decoration: none;
   text-align: left;
-  color: #ffffff;
+  color: var(--color-white);
 
   -webkit-transition: color 0.2s ease-in-out;
   -moz-transition: color 0.2s ease-in-out;
@@ -214,11 +238,11 @@ ul#nav li a:active {
 }
 
 ul#nav li.current a {
-  color: #1a7ed3;
+  color: var(--color-blue-light);
 }
 
 ul#nav li a:hover {
-  color: #1a7ed3;
+  color: var(--color-blue-light);
 }
 
 /* Lang selectors */
@@ -229,7 +253,7 @@ ul#nav li.lang {
 }
 
 ul#nav li.lang a#selected span {
-  border-bottom: 3px solid #1a7ed3;
+  border-bottom: 3px solid var(--color-blue-light);
 }
 
 ul#nav li.lang a span img {
@@ -241,12 +265,12 @@ ul#nav a.btn {
   padding: 8px 5px;
   text-decoration: none;
   text-align: center;
-  color: #ffffff;
+  color: var(--color-white);
   cursor: pointer;
 }
 
 ul#nav a.btn:hover {
-  color: #1a7ed3;
+  color: var(--color-blue-light);
 }
 
 /* ------------------------------------------------------------------ */
@@ -254,7 +278,7 @@ ul#nav a.btn:hover {
 /* ------------------------------------------------------------------ */
 
 #about {
-  background: #2b2b2b;
+  background-color: var(--color-gray-dark-4);
   padding-top: 96px;
   padding-bottom: 66px;
   overflow: hidden;
@@ -264,18 +288,18 @@ ul#nav a.btn:hover {
 #about a:visited,
 #about a:link,
 #about a:active {
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 #about h2 {
   font: 22px/30px "opensans-bold", sans-serif;
-  color: #ffffff;
+  color: var(--color-white);
   margin-bottom: 12px;
 }
 
 #about p {
   line-height: 30px;
-  color: #a7a7a7;
+  color: var(--color-gray-light-4);
 }
 
 #about .profile-pic {
@@ -296,12 +320,12 @@ ul#nav a.btn:hover {
 
 #about .download .button {
   margin-top: 6px;
-  background: #444444;
+  background-color: var(--color-gray-dark-2);
 }
 
 #about .download .button:hover {
-  background: #ffffff;
-  color: #2b2b2b;
+  background-color: var(--color-white);
+  color: var(--color-gray-dark-4);
 }
 
 #about .download .button i {
@@ -314,20 +338,10 @@ ul#nav a.btn:hover {
 /* ------------------------------------------------------------------ */
 
 .resume {
-  background: #fff;
+  background: var(--color-white);
   padding-top: 90px;
   padding-bottom: 72px;
   overflow: hidden;
-}
-
-.resume a,
-.resume a:visited {
-  color: #335384;
-}
-
-.resume a:hover,
-.resume a:focus {
-  color: #313131;
 }
 
 .resume h1 {
@@ -337,7 +351,7 @@ ul#nav a.btn:hover {
 }
 
 .resume h1 span {
-  border-bottom: 3px solid #1a7ed3;
+  border-bottom: 3px solid var(--color-blue-light);
   padding-bottom: 3px;
 }
 
@@ -375,9 +389,11 @@ ul#nav a.btn:hover {
 
 .resume .date {
   font-style: normal;
+  margin-bottom: 10px;
 }
 
-.resume .resume-sec-title span {
+.resume .resume-sec-title span,
+.resume .date span {
   margin-right: 5px;
   margin-left: 5px;
 }
@@ -385,6 +401,17 @@ ul#nav a.btn:hover {
 .resume .description {
   font: 15px;
   font-style: normal;
+}
+
+.resume .resume-sec-title {
+  margin-bottom: -15px;
+}
+
+.resume i {
+  display: inline-block;
+  width: 20px;
+  margin-right: 6px;
+  text-align: center;
 }
 
 /*----------------------------------------------*/
@@ -399,7 +426,7 @@ ul#nav a.btn:hover {
 
 .bar em.name {
   font: 14px "opensans-bold", sans-serif;
-  color: #313131;
+  color: var(--color-gray-dark-3);
   text-transform: uppercase;
   font-weight: normal;
   position: relative;
@@ -422,7 +449,7 @@ div.skill-info {
 .skilltext p {
   font: 14px "opensans-bold", sans-serif;
   margin-top: 20px;
-  color: #313131;
+  color: var(--color-gray-dark-3);
   font-weight: normal;
   position: relative;
   text-align: left;
@@ -450,6 +477,12 @@ div.skill-info {
   animation: showText 1s 1.5s linear forwards;
 }
 
+@keyframes showBar {
+  100% {
+    opacity: 0.2;
+  }
+}
+
 @keyframes showText {
   100% {
     opacity: 1;
@@ -460,7 +493,7 @@ div.skill-info {
   position: relative;
   height: 36px;
   width: 100%;
-  background: #c5c5c5;
+  background: var(--color-gray-light-2);
   border-radius: 4px;
   transform: scaleX(0);
   transform-origin: left;
@@ -471,7 +504,7 @@ div.skill-info {
 
 .bar .progress-line span {
   height: 100%;
-  background: #335384;
+  background-color: var(--color-blue-dark);
   border-radius: 4px;
   position: absolute;
   transform: scaleX(0);
@@ -481,7 +514,7 @@ div.skill-info {
 
 .bar .progress-line p {
   height: 100%;
-  color: #c5c5c5;
+  color: var(--color-gray-light-2);
   font-size: 12px;
   font-weight: bold;
   position: absolute;
@@ -519,7 +552,7 @@ div.skill-info {
 /* Portfolio Content */
 #portfolio-wrapper .columns { margin-bottom: 36px; }
 .portfolio-item .item-wrap {
-  background: #ffffff;
+  background: var(--color-white);
   overflow: hidden;
   position: relative;
 
@@ -554,7 +587,7 @@ div.skill-info {
 
 .portfolio-item .item-wrap .link-icon {
   display: block;
-  color: #ffffff;
+  color: var(--color-white);
   height: 30px;
   width: 30px;
   font-size: 18px;
@@ -583,7 +616,7 @@ div.skill-info {
 .portfolio-item .portfolio-item-meta { padding: 18px }
 .portfolio-item .portfolio-item-meta h5 {
   font: 14px/21px 'opensans-bold', sans-serif;
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 .portfolio-item .portfolio-item-meta p {
@@ -608,7 +641,7 @@ div.skill-info {
 /* popup modal */
 .popup-modal {
  max-width: 550px;
- background: #ffffff;
+ background: var(--color-white);
  position: relative;
  margin: 0 auto;
 }
@@ -646,7 +679,7 @@ div.skill-info {
 }
 
 .popup-modal .link-box a {
-  color: #ffffff;
+  color: var(--color-white);
   font: 11px/21px 'opensans-bold', sans-serif;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -681,7 +714,7 @@ div.skill-info {
   font: 18px/24px 'opensans-bold', sans-serif;
   text-transform: uppercase;
   letter-spacing: 3px;
-  color: #fff;
+  color: var(--color-white);
 }
 
 #testimonials h1 span { display: none; }
@@ -696,7 +729,7 @@ div.skill-info {
   line-height: 72px;
   text-align: left;
   float: left;
-  color: #fff;
+  color: var(--color-white);
 }
 
 /*	Blockquotes */
@@ -714,7 +747,7 @@ div.skill-info {
   padding: 0;
   font-size: 24px;
   line-height: 48px;
-  color: #fff
+  color: var(--color-white);
 }
 
 #testimonials blockquote cite {
@@ -722,7 +755,7 @@ div.skill-info {
   font-size: 12px;
   font-style: normal;
   line-height: 18px;
-  color: #fff;
+  color: var(--color-white);
 }
 
 #testimonials blockquote cite:before { content: "\2014 \0020"; }
@@ -838,21 +871,21 @@ div.skill-info {
 /* ------------------------------------------------------------------ */
 
 #contact {
-  background: #191919;
+  background-color: var(--color-gray-dark-4);
   padding-top: 96px;
   padding-bottom: 102px;
-  color: #636363;
+  color: var(--color-gray-light-1);
   font-size: 105%;
 }
 
 #contact .section-head h2 {
-  color: #e9e7e7;
+  color: var(--color-white);
   margin-bottom: 42px;
 }
 
 #contact h2 {
   font: 24px/34px "opensans-bold", sans-serif;
-  color: #e9e7e7;
+  color: var(--color-white);
   margin-bottom: 12px;
   margin-top: 40px;
 }
@@ -866,63 +899,22 @@ div.skill-info {
   text-decoration: none;
 }
 
-#contact span a:link, #contact span a:visited, #contact span a:active { color: #636363 }
+#contact span a:link, #contact span a:visited, #contact span a:active { color: var(--color-gray-light-1) }
 
-#contact span a:hover {
-  color: #c5c5c5;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
+#contact span a:hover,
 #contact .contact-info:hover {
-  color: #c5c5c5;
   font-weight: bold;
   transition: color 0.3s;
 }
 
-#contact .icon-name:before {
-  font-family: "FontAwesome";
-  content: "\f007";
-  padding-right: 30px;
-  font-size: 20px;
-  color: #c5c5c5;
-  margin-bottom: 10px;
+#contact .contact-info {
+  font-size: 15px;
 }
-
-#contact .icon-phone:before {
-  font-family: "FontAwesome";
-  content: "\f095";
-  padding-right: 30px;
-  font-size: 20px;
-  color: #c5c5c5;
+#contact .icon {
+  color: var(--color-gray-light-1);
   margin-bottom: 10px;
-}
-
-#contact .icon-mail:before {
-  font-family: "FontAwesome";
-  content: "\f0e0";
-  padding-right: 30px;
-  font-size: 20px;
-  color: #c5c5c5;
-  margin-bottom: 10px;
-}
-
-#contact .icon-home:before {
-  font-family: "FontAwesome";
-  content: "\f015";
-  padding-right: 30px;
-  font-size: 20px;
-  color: #c5c5c5;
-  margin-bottom: 10px;
-}
-
-#contact .icon-earth:before {
-  font-family: "FontAwesome";
-  content: "\f0ac";
-  padding-right: 30px;
-  font-size: 20px;
-  color: #c5c5c5;
-  margin-bottom: 10px;
+  text-align: center;
+  width: 35px;
 }
 
 /* contact form */
@@ -930,7 +922,7 @@ div.skill-info {
 #contact label {
   font: 15px/24px 'opensans-bold', sans-serif;
   margin: 12px 0;
-  color: #e9e7e7;
+  color: var(--color-white);
   display: block;
   float: left;
   width: 26%;
@@ -944,8 +936,8 @@ div.skill-info {
 #contact textarea,
 #contact select {
   padding: 18px 20px;
-	color: rgb(250, 229, 229);
-	background: #373233;
+	color: var(--color-white);
+	background-color: var(--color-gray-dark-2);
 	margin-top: 42px;
 	border: 0;
 	outline: none;
@@ -958,15 +950,15 @@ div.skill-info {
 #contact input:focus,
 #contact textarea:focus,
 #contact select:focus {
-	color: #ffffff;
-  background-color: #1a7ed3;
+	color: var(--color-white);
+  background-color: var(--color-blue-light);
 }
 
 #contact button.submit {
 	text-transform: uppercase;
 	letter-spacing: 3px;
-	color:#ffffff;
-  background: #0D0D0D;
+	color:var(--color-white);
+  background-color: var(--color-gray-dark-2);
 	border: none;
   cursor: pointer;
   height: auto;
@@ -977,39 +969,41 @@ div.skill-info {
 }
 
 #contact button.submit:hover {
-	color: #0D0D0D;
-	background: #ffffff;
+	color: var(--color-gray-dark-4);
+	background-color: var(--color-white);
 }
 
 #contact span.required {
-	color: #1a7ed3;
+	color: var(--color-blue-light);
 	font-size: 13px;
 }
 
 #message-warning, #message-success {
   display: none;
-	background: #0F0F0F;
+	background-color: var(--color-black);
 	padding: 24px 24px;
 	margin-bottom: 36px;
   width: 65%;
   margin-left: 26%;
+  border-radius: 4px;
 }
 
 div[id^="message-missing-"] {
   display: none;
-  background: #0F0F0F;
+  background-color: var(--color-black);
 	padding: 12px 12px;
 	margin-bottom: 12px;
   width: 65%;
   margin-left: 26%;
+  border-radius: 4px;
 }
 
 #message-warning, div[id^="message-missing-"] {
-  color: #D72828;
+  color: var(--color-red);
 }
 
 #message-success { 
-  color: #11ABB0;
+  color: var(--color-green);
 }
 
 #message-warning i,
@@ -1032,7 +1026,7 @@ div[id^="message-missing-"] i {
 footer {
   padding-top: 48px;
   margin-bottom: 48px;
-  color: #303030;
+  color: var(--color-gray-dark-4);
   font-size: 14px;
   text-align: center;
   position: relative;
@@ -1040,14 +1034,14 @@ footer {
 
 footer a,
 footer a:visited {
-  color: #525252;
+  color: var(--color-gray-dark-1);
 }
 
 footer a:hover,
 footer a:focus,
 footer .copyright li:hover,
 footer .copyright li:focus {
-  color: #ffffff;
+  color: var(--color-white);
   font-weight: bold;
 }
 
@@ -1065,7 +1059,7 @@ footer .copyright li {
   margin: 0;
   padding: 0;
   line-height: 24px;
-  color: #525252;
+  color: var(--color-gray-dark-1);
 }
 
 .ie footer .copyright li {
@@ -1076,7 +1070,7 @@ footer .copyright li:before {
   content: "\2022";
   padding-left: 10px;
   padding-right: 10px;
-  color: #525252;
+  color: var(--color-gray-dark-1);
 }
 
 footer .copyright li:first-child:before {
@@ -1087,7 +1081,7 @@ footer .social-links {
   margin: 18px 0 30px 0;
   padding: 0;
   font-size: 30px;
-  color: #1a7ed3;
+  color: var(--color-blue-light);
 }
 footer .social-links li {
   display: inline-block;
@@ -1112,7 +1106,7 @@ footer .social-links li:first-child {
   display: block;
   width: 60px;
   height: 60px;
-  background-color: #525252;
+  background-color: var(--color-gray-dark-1);
 
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -1120,14 +1114,14 @@ footer .social-links li:first-child {
   -ms-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 
-  color: #ffffff;
+  color: var(--color-white);
   font-size: 21px;
   line-height: 60px;
   border-radius: 100%;
 }
 
 #go-top a:hover {
-  background-color: #1a7ed3;
+  background-color: var(--color-blue-light);
 }
 
 /* ------------------------------------------------------------------ */
@@ -1135,7 +1129,7 @@ footer .social-links li:first-child {
 /* ------------------------------------------------------------------ */
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:300,500');
 .page404 {
-  background-color: #333333;
+  background-color: var(--color-gray-nav);
   width: 100%;
   height: 100%;
   position: fixed;
@@ -1144,7 +1138,7 @@ footer .social-links li:first-child {
   min-height: 100vh;
   min-width: 100vw;
   font-family: "Roboto Mono", "Liberation Mono", Consolas, monospace;
-  color: rgba(255,255,255,.87);
+  color: var(--color-white-opacity-87);
 }
 
 .page404,
@@ -1182,12 +1176,12 @@ footer .social-links li:first-child {
 }
   
 .msg404 > .btn {
-  border: 3px solid #ffffff;
+  border: 3px solid var(--color-white);
   border-radius: 28px;
-  background-color: #333333;
+  background-color: var(--color-gray-nav);
   margin: 30px;
   font-weight: bold;
-  color: #ffffff;
+  color: var(--color-white);
   padding: 7px 21px;
   font-size: 14px;
   cursor: pointer;
@@ -1195,5 +1189,5 @@ footer .social-links li:first-child {
 }
 
 .msg404 > .btn:hover {
-  background: #525252;
+  background-color: var(--color-gray-dark-1);
 }
