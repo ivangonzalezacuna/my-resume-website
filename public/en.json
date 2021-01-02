@@ -32,27 +32,27 @@
       {
         "name": "linkedin",
         "url": "https://www.linkedin.com/in/ivangonzalezacuna/",
-        "className": "fa fa-linkedin"
+        "className": "fab fa-linkedin-in"
       },
       {
         "name": "github",
         "url": "https://github.com/ivangonzalezacuna",
-        "className": "fa fa-github"
+        "className": "fab fa-github"
       },
       {
         "name": "skype",
         "url": "https://join.skype.com/invite/cbwetKxu9kj9",
-        "className": "fa fa-skype"
+        "className": "fab fa-skype"
       },
       {
         "name": "instagram",
         "url": "https://www.instagram.com/ivanglez98/",
-        "className": "fa fa-instagram"
+        "className": "fab fa-instagram"
       },
       {
         "name": "facebook",
         "url": "https://www.facebook.com/ivan.gonzalezacuna/",
-        "className": "fa fa-facebook"
+        "className": "fab fa-facebook-square"
       }
     ],
     "contact": {
@@ -93,7 +93,7 @@
     {
       "school": "University of Vigo",
       "degree": "Degree in Telecommunications Technology Engineering",
-      "graduated": " August 2016 - June 2020",
+      "graduated": "August 2016 - June 2020",
       "description": "Specialization in Telematics, where I could learn not only a lot about programming, but also several communication protocols over Internet and other networks"
     },
     {
