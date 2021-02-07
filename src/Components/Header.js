@@ -1,36 +1,18 @@
 import React, { Component } from "react";
+import {withTranslation} from "react-i18next";
 
 class Header extends Component {
   render() {
-    if (this.props.data) {
-      var navhome = this.props.data.navhome;
-      var navabout = this.props.data.navabout;
-      var naveducation = this.props.data.naveducation;
-      var navwork = this.props.data.navwork;
-      var navskills = this.props.data.navskills;
-      //var navportfolio = this.props.data.navportfolio;
-      //var navtestimonials = this.props.data.navtestimonials;
-      var navcontact = this.props.data.navcontact;
-      var titleintro = this.props.data.titleintro;
-      var desc1 = this.props.data.desc1;
-      var desc2 = this.props.data.desc2;
-      var desc3 = this.props.data.desc3;
-      var name = this.props.data.name;
-      var occupation = this.props.data.occupation;
-      var company = this.props.data.company;
-      var city = this.props.data.address.city;
-      var country = this.props.data.address.state;
-      var headerKey=this.props.data.key;
-      var networks = this.props.data.social.map(function (network) {
-        return (
-          <li key={network.name}>
-            <a href={network.url} target="_blank" rel="noopener noreferrer">
-              <i className={network.className}></i>
-            </a>
-          </li>
-        );
-      });
-    }
+    const { t, i18n } = this.props;
+    var networks = t('main.social', { returnObjects: true }).map(function (network) {
+      return (
+        <li key={network.name}>
+          <a href={network.url} target="_blank" rel="noopener noreferrer">
+            <i className={network.className}></i>
+          </a>
+        </li>
+      );
+    });
 
     return (
       <header id="home">
@@ -45,51 +27,51 @@ class Header extends Component {
           <ul id="nav" className="nav">
             <li className="current">
               <a className="smoothscroll" href="#home">
-                {navhome}
+                {t('main.navhome')}
               </a>
             </li>
             <li>
               <a className="smoothscroll" href="#about">
-                {navabout}
+                {t('main.navabout')}
               </a>
             </li>
             <li>
               <a className="smoothscroll" href="#work">
-                {navwork}
+                {t('main.navwork')}
               </a>
             </li>
             <li>
               <a className="smoothscroll" href="#education">
-                {naveducation}
+                {t('main.naveducation')}
               </a>
             </li>
             <li>
               <a className="smoothscroll" href="#skills">
-                {navskills}
+                {t('main.navskills')}
               </a>
             </li>
             {/*<li>
               <a className="smoothscroll" href="#portfolio">
-                {navportfolio}
+                {t('main.navportfolio')}
               </a>
             </li>
             <li>
               <a className="smoothscroll" href="#testimonials">
-                {navtestimonials}
+                {t('main.navtestimonials')}
               </a>
             </li>*/}
             <li>
               <a className="smoothscroll" href="#contact">
-                {navcontact}
+                {t('main.navcontact')}
               </a>
             </li>
             <li className="lang">
-              <a type="button" className="smoothscroll" id={this.props.classLangEN} class="btn" href="#en" onClick={this.props.en}>
+              <a type="button" className="smoothscroll" id={this.props.classLangEN} class="btn" href="#en" onClick={() => i18n.changeLanguage('en')}>
                 <span>
                   <img className="langImg" alt="Select english" src="images/reino-unido.png"></img>
                 </span>
               </a>
-              <a type="button" className="smoothscroll" id={this.props.classLangES} class="btn" href="#es" onClick={this.props.es}>
+              <a type="button" className="smoothscroll" id={this.props.classLangES} class="btn" href="#es" onClick={() => i18n.changeLanguage('es')}>
                 <span>
                   <img className="langImg" alt="Select spanish" src="images/espana.png"></img>
                 </span>
@@ -99,13 +81,13 @@ class Header extends Component {
         </nav>
 
         <div className="row banner">
-          <div key={headerKey} className="banner-text">
+          <div key={t('main.key')} className="banner-text">
             <h1 className="responsive-headline">
-              {titleintro} {name}
+              {t('main.titleintro')} {t('main.name')}
             </h1>
             <h3>
-              {desc1} {city} ({country}), {desc2} <span>{occupation}</span>{" "}
-              {desc3} <span>{company}</span>
+              {t('main.desc1')} {t('main.address.city')} ({t('main.address.state')}), {t('main.desc2')} <span>{t('main.occupation')}</span>{" "}
+              {t('main.desc3')} <span>{t('main.company')}</span>
             </h3>
             <hr />
             <ul className="social">{networks}</ul>
@@ -122,4 +104,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default Header = withTranslation('common')(Header);

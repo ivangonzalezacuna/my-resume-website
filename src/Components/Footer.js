@@ -1,26 +1,26 @@
 import React, { Component } from "react";
+import {withTranslation} from "react-i18next";
 
 class Footer extends Component {
   render() {
-    if (this.props.data) {
-      var networks = this.props.data.social.map(function (network) {
-        return (
-          <li key={network.name}>
-            <a href={network.url} target="_blank" rel="noopener noreferrer">
-              <i className={network.className}></i>
-            </a>
-          </li>
-        );
-      });
-    }
-
+    const { t } = this.props;
+    var networks = t('main.social', { returnObjects: true }).map(function (network) {
+      return (
+        <li key={network.name}>
+          <a href={network.url} target="_blank" rel="noopener noreferrer">
+            <i className={network.className}></i>
+          </a>
+        </li>
+      );
+    });
+    
     return (
       <footer>
         <div className="row">
           <div className="twelve columns">
             <ul className="social-links">{networks}</ul>
             <ul className="copyright">
-              <li>&copy; Copyright 2020 Iván González</li>
+              <li>&copy; {t('main.copyright')}</li>
             </ul>
           </div>
           <div id="go-top">
@@ -34,4 +34,4 @@ class Footer extends Component {
   }
 }
 
-export default Footer;
+export default Footer = withTranslation('common')(Footer);

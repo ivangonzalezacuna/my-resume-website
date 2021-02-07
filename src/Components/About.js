@@ -1,14 +1,9 @@
 import React, { Component } from "react";
+import {withTranslation} from "react-i18next";
 
 class About extends Component {
   render() {
-    if (this.props.data) {
-      var title = this.props.data.title;
-      var profilepic = "images/" + this.props.data.image;
-      var download = this.props.data.download;
-      var bio = this.props.data.bio;
-      var resumeDownload = this.props.data.resumedownload;
-    }
+    const { t } = this.props;
 
     return (
       <section id="about">
@@ -16,19 +11,19 @@ class About extends Component {
           <div className="three columns">
             <img
               className="profile-pic"
-              src={profilepic}
+              src={"images/" + t('about.image')}
               alt="Iván González Profile Pic"
             />
           </div>
           <div className="nine columns main-col">
-            <h2>{title}</h2>
-            <p>{bio}</p>
+            <h2>{t('about.title')}</h2>
+            <p>{t('about.bio')}</p>
             <div className="row">
               <div className="columns download">
                 <p>
-                  <a href={resumeDownload} className="button" target="_blank" rel="noopener noreferrer">
+                  <a href={t('about.resumedownload')} className="button" target="_blank" rel="noopener noreferrer">
                     <i className="fas fa-cloud-download-alt"></i>
-                    {download}
+                    {t('about.download')}
                   </a>
                 </p>
               </div>
@@ -40,4 +35,4 @@ class About extends Component {
   }
 }
 
-export default About;
+export default About = withTranslation('common')(About);
